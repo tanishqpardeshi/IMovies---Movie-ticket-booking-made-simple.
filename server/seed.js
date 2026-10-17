@@ -29,6 +29,7 @@ const seedData = async () => {
 
     await Booking.deleteMany();
     await Movie.deleteMany();
+    await Movie.insertMany(getSeedWorldMovies());
     await User.deleteMany();
     await Booking.createIndexes();
 
