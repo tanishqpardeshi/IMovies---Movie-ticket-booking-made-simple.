@@ -1,3 +1,4 @@
+const {getInMemoryWorldMovies}=require('./worldMoviesData');
 const bcrypt = require('bcryptjs');
 
 // Pre-hashed passwords for seed accounts
@@ -16,7 +17,7 @@ const INITIAL_USERS = [
   },
   {
     _id: '65f1a0000000000000000002',
-    username: 'Tanishq Pardeshi',
+    username: 'Eshani Jain',
     email: 'user@imovies.com',
     password: defaultUserPassHash,
     role: 'user',
@@ -114,7 +115,7 @@ const INITIAL_MOVIES = [
     rating: 8.4,
     language: 'English',
     showtimes: ['10:30 AM', '02:00 PM', '06:30 PM', '09:45 PM']
-  }
+  },...getInMemoryWorldMovies()
 ];
 
 const today = new Date().toISOString().split('T')[0];

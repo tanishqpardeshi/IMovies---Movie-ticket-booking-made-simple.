@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 const User = require('./models/User');
 const Movie = require('./models/Movie');
 const Booking = require('./models/Booking');
-
+const {getSeedWorldMovies}= require('./config/worldMoviesData');
 dotenv.config();
 
 const seedData = async () => {
@@ -44,7 +44,7 @@ const seedData = async () => {
         role: 'admin'
       },
       {
-        username: 'Tanishq Pardeshi',
+        username: 'Eshani Jain',
         email: 'user@imovies.com',
         password: userPassword,
         role: 'user'
@@ -135,7 +135,8 @@ const seedData = async () => {
         rating: 8.4,
         language: 'English',
         showtimes: ['10:30 AM', '02:00 PM', '06:30 PM', '09:45 PM']
-      }
+      },...getSeedWorldMovies()
+
     ]);
 
     // Pre-book a few seats on Dune: Part Two so the seat grid immediately shows taken seats!
